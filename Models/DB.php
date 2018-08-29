@@ -2,7 +2,7 @@
 
 class DB {
 	public static $host = "localhost";
-	public static $dbname = "letstestthis";
+	public static $dbname = "cogipapp";
 	public static $username = "root";
 	public static $password = "";
 	private static function connect() {
@@ -11,7 +11,7 @@ class DB {
 		return $bdd;
 	}
 	public static function queryID($id) {
-		$sqlRequest = 'SELECT * FROM users WHERE id = :id';
+		$sqlRequest = 'SELECT * FROM persons WHERE id = :id';
 		$statement = self::connect()->prepare($sqlRequest);
 		$statement->bindValue(':id', $id);
 		$statement->execute();
