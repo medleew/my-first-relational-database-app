@@ -21,6 +21,19 @@ class DB {
 		}
 
 	}
+	public static function queryInvoice($id) {
+		$sqlRequest = 'SELECT *
+						from
+						    invoices WHERE id = :id';
+		$statement = self::connect()->prepare($sqlRequest);
+		$statement->bindValue(':id', $id);
+		$statement->execute();
+		if (explode(' ', $sqlRequest)[0] == 'SELECT') {
+			$data = $statement->fetch();
+			return $data;
+		}
+
+	}
 	public static function fiveLastedInvoices() {
 		$sqlRequest = 'SELECT invoices.id, compagnies.name, invoices.dateofissue
 						FROM invoices
@@ -29,6 +42,24 @@ class DB {
 		$statement = self::connect()->prepare($sqlRequest);
 		$statement->execute();
 		$data = $statement->fetchAll();
+		return $data;
+	}
+	public static function AllInvoices() {
+		$sqlRequest = 'SELECT invoices.id, compagnies.name, invoices.dateofissue
+						FROM invoices
+						INNER JOIN compagnies ON invoices.companyid=compagnies.id ORDER BY invoices.dateofissue DESC';
+		//$sqlRequest = 'SELECT * FROM invoices';
+		$statement = self::connect()->prepare($sqlRequest);
+		$statement->execute();
+		$data = $statement->fetchAll();
+		return $data;
+	}
+	public static function queryLogin($username) {
+		$sqlRequest = 'SELECT username, password FROM users WHERE username = :username';
+		$statement = self::connect()->prepare($sqlRequest);
+		$statement->BindValue(':username', $username);
+		$statement->execute();
+		$data = $statement->fetch();
 		return $data;
 	}
 }

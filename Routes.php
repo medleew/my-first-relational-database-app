@@ -5,8 +5,11 @@ Route::set('index.php', function() {
 Route::set('clients', function() {
 	Clients::CreateView('Clients');
 });
-Route::set('admin', function() {
-	Admin::CreateView('Admin');
+Route::set('facture', function() {
+	Invoices::CreateView('Invoices');
+});
+Route::set('facture-details', function() {
+	InvoiceDetails::CreateView('InvoiceDetails');
 });
 Route::set('login', function() {
 	Login::VerifyLogin();
