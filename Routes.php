@@ -8,4 +8,7 @@ Route::set('clients', function() {
 Route::set('admin', function() {
 	Admin::CreateView('Admin');
 });
+Route::set('login', function() {
+	Login::VerifyLogin();
+});
  ?>

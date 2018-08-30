@@ -1,2 +1,10 @@
+Options +FollowSymLinks
+
+
 RewriteEngine On
-RewriteRule ^([^/]+)/? index.php?url=$1 [L,QSA]
+RewriteRule ^([^/]+)/?(\d+)*$ index.php?url=$1&id=$2 [L,QSA]
+
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+ 

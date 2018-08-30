@@ -21,6 +21,16 @@ class DB {
 		}
 
 	}
+	public static function fiveLastedInvoices() {
+		$sqlRequest = 'SELECT invoices.id, compagnies.name, invoices.dateofissue
+						FROM invoices
+						INNER JOIN compagnies ON invoices.companyid=compagnies.id ORDER BY invoices.id DESC LIMIT 5';
+		//$sqlRequest = 'SELECT * FROM invoices';
+		$statement = self::connect()->prepare($sqlRequest);
+		$statement->execute();
+		$data = $statement->fetchAll();
+		return $data;
+	}
 }
 
 
