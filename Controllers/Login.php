@@ -10,11 +10,11 @@ class Login extends Controller {
 					header("Location: clients");
 				} else {
 					echo "Wrong password!";
-					header("Location: index/1");
+					header("Location: index?status=wrongpassword");
 				}
 			} else {
 				echo "Can't found this user";
-				header("Location: index/2");
+				header("Location: index?status=usernotfound");
 			}
 		}
 	}
