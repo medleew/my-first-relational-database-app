@@ -15,14 +15,14 @@ class InvoiceDetails extends Controller {
 				case 'dateofissue':
 					return self::isSetReturnValue('dateofissue');
 					break;
-				case 'object':
-					return self::isSetReturnValue('object');
+				case 'companyname':
+					return self::isSetReturnValue('companyname');
 					break;
-				case 'companyid':
-					return self::isSetReturnValue('companyid');
+				case 'companytype':
+					return self::isSetReturnValue('companytype');
 					break;
-				case 'personid':
-					return self::isSetReturnValue('personid');
+				case 'personname':
+					return self::isSetReturnValue('personname');
 					break;
 				default:
 					return "Not found";

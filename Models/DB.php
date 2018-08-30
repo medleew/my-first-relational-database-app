@@ -22,16 +22,22 @@ class DB {
 
 	}
 	public static function queryInvoice($id) {
-		$sqlRequest = 'SELECT *
-						from
-						    invoices WHERE id = :id';
+		$sqlRequest = "
+					SELECT	invoices.id, 
+							invoices.dateofissue, 
+							compagnies.name AS 'companyname', 
+							companiestypes.name AS 'companytype', 
+							persons.name AS 'personname'
+					FROM invoices
+					JOIN compagnies ON compagnies.id = invoices.companyid
+					JOIN companiestypes ON companiestypes.id = compagnies.typeid
+					JOIN persons ON persons.id = invoices.personid
+					WHERE invoices.id = :id";
 		$statement = self::connect()->prepare($sqlRequest);
 		$statement->bindValue(':id', $id);
 		$statement->execute();
-		if (explode(' ', $sqlRequest)[0] == 'SELECT') {
-			$data = $statement->fetch();
-			return $data;
-		}
+		$data = $statement->fetch();
+		return $data;
 
 	}
 	public static function fiveLastedInvoices() {
@@ -48,7 +54,6 @@ class DB {
 		$sqlRequest = 'SELECT invoices.id, compagnies.name, invoices.dateofissue
 						FROM invoices
 						INNER JOIN compagnies ON invoices.companyid=compagnies.id ORDER BY invoices.dateofissue DESC';
-		//$sqlRequest = 'SELECT * FROM invoices';
 		$statement = self::connect()->prepare($sqlRequest);
 		$statement->execute();
 		$data = $statement->fetchAll();
