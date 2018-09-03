@@ -7,6 +7,7 @@
 <body>
 	<p>Numéro de facture : #<?php echo $_GET['id'] ?></p>	
 	<p>Date : <?php echo UpdateInvoice::showInvoiceInfo('dateofissue') ?></p>	
+	<p>Type: <?php echo UpdateInvoice::showInvoiceInfo('companytype'); ?></p>
 	<form action="/UpdateInvoicePOST" method="POST">
 		<input hidden name="id" value="<?php echo $_GET['id'] ?>">
 		<label for="">Objets :</label>
@@ -15,10 +16,12 @@
 		<select name="company" id="">
 			<?php echo UpdateInvoice::showAllCompagnies(); ?>
 		</select>
-		<label for="">Personne de contact</label>
-		<select name="contactperson" id="">
+		<label for="contactperson">Personne de contact</label>
+		<select name="contactperson" id="contactperson">
 			<?php echo UpdateInvoice::showAllPersones(); ?>
 		</select>
+		
+
 		<input type="submit" value="Modifier">
 	</form>
 </body>

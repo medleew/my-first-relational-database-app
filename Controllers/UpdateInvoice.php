@@ -26,6 +26,14 @@ class UpdateInvoice extends Controller {
 		//print_r($_POST);
 		return implode("", $tabList);
 	}
+	public static function showAllCompagniesTypes() {
+		$tabList = [];
+		foreach (self::SelectNameID('companiestypes') as $key => $value) {
+			array_push($tabList, "<option selected value='".$value['id']."'>".$value['name']."</option>");
+		}
+		//print_r($_POST);
+		return implode("", $tabList);
+	}
 	public static function showInvoiceInfo($back) {
 		return self::queryInvoice($_GET['id'])[$back];
 	}
