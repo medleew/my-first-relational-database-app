@@ -11,6 +11,9 @@ Route::set('facture', function() {
 Route::set('facture-details', function() {
 	InvoiceDetails::CreateView('InvoiceDetails');
 });
+Route::set('facture-add', function() {
+	InvoiceAdd::CreateView('InvoiceAdd');
+});
 Route::set('dashboard', function() {
 	Dashboard::CreateView('Dashboard');
 });
@@ -22,5 +25,11 @@ Route::set('login', function() {
 });
 Route::set('updateinvoicepost', function() {
 	UpdateInvoicePOST::VerifyUpdateInvoice();
+});
+Route::set('deleteinvoice', function() {
+	DeleteInvoice::DeleteInvoiceID();
+});
+Route::set('invoiceaddpost', function() {
+	InvoiceAddPOST::VerifyAdd();
 });
  ?>

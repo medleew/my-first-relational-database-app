@@ -91,6 +91,22 @@ class DB {
 		$statement->BindValue(':personid', $personid);
 		$statement->execute();
 	}
+	public static function DeleteFromDB($table, $id) {
+		$sqlRequest = 'DELETE FROM '.$table.' WHERE id = :id';
+		$statement = self::connect()->prepare($sqlRequest);
+		$statement->BindValue(':id', $id);
+		$statement->execute();	
+	}
+	public static function AddInvoiceToDB($dateofissue, $object, $companyID, $contactperson) {
+		$sqlRequest = 'INSERT INTO invoices (dateofissue, object, companyid, personid) 
+						VALUES (:dateofissue, :object, :companyid, :personid)';
+		$statement = self::connect()->prepare($sqlRequest);
+		$statement->bindParam(':dateofissue', $dateofissue);
+		$statement->bindParam(':object', $object);
+		$statement->bindParam(':companyid', $companyID);
+		$statement->bindParam(':personid', $contactperson);
+		$statement->execute();	
+	}
 }
 
 

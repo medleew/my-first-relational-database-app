@@ -21,5 +21,6 @@
 			<?php echo Dashboard::showRecentInvoices(); ?>
 		</tbody>
 	</table>
+	<a href="/facture-add">Ajouter une facture</a>
 </body>
 </html>

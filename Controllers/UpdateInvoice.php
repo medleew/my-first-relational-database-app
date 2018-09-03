@@ -29,9 +29,6 @@ class UpdateInvoice extends Controller {
 	public static function showInvoiceInfo($back) {
 		return self::queryInvoice($_GET['id'])[$back];
 	}
-	public static function checkUpdate() {
-		self::updateInvoice($id, $object, $companyid, $personid);
-	}
 }
 
  ?>
