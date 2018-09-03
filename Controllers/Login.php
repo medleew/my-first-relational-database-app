@@ -7,7 +7,7 @@ class Login extends Controller {
 			if (!empty($queryLogin)) {
 				if ($userPassword == $queryLogin['password']) {
 					echo "Good Password";
-					header("Location: clients");
+					header("Location: dashboard");
 				} else {
 					echo "Wrong password!";
 					header("Location: index?status=wrongpassword");

@@ -48,7 +48,7 @@ class DB {
 						JOIN compagnies ON compagnies.id = invoices.companyid
 						JOIN persons ON persons.id = invoices.personid
 						JOIN companiestypes ON companiestypes.id = compagnies.typeid
-						ORDER BY dateofissue DESC LIMIT 5';
+						ORDER BY id DESC LIMIT 5';
 		//$sqlRequest = 'SELECT * FROM invoices';
 		$statement = self::connect()->prepare($sqlRequest);
 		$statement->execute();
