@@ -9,6 +9,9 @@ class InvoiceDetails extends Controller {
 	public static function query($type) {
 		if (isset($_GET['id'])) {
 			switch ($type) {
+				case 'object':
+					return self::isSetReturnValue('object');
+					break;
 				case 'id':
 					return self::isSetReturnValue('id');
 					break;

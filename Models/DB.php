@@ -24,7 +24,9 @@ class DB {
 	public static function queryInvoice($id) {
 		$sqlRequest = "
 					SELECT	invoices.id, 
-							invoices.dateofissue, 
+							invoices.dateofissue,
+							invoices.object, 
+							compagnies.id AS 'companyID', 
 							compagnies.name AS 'companyname', 
 							companiestypes.name AS 'companytype', 
 							persons.name AS 'personname'
@@ -41,9 +43,12 @@ class DB {
 
 	}
 	public static function fiveLastedInvoices() {
-		$sqlRequest = 'SELECT invoices.id, compagnies.name, invoices.dateofissue
+		$sqlRequest = 'SELECT invoices.id, invoices.dateofissue, invoices.object, compagnies.name AS "companyname", persons.name AS "contactname", companiestypes.name AS "companytype"
 						FROM invoices
-						INNER JOIN compagnies ON invoices.companyid=compagnies.id ORDER BY invoices.id DESC LIMIT 5';
+						JOIN compagnies ON compagnies.id = invoices.companyid
+						JOIN persons ON persons.id = invoices.personid
+						JOIN companiestypes ON companiestypes.id = compagnies.typeid
+						ORDER BY dateofissue DESC LIMIT 5';
 		//$sqlRequest = 'SELECT * FROM invoices';
 		$statement = self::connect()->prepare($sqlRequest);
 		$statement->execute();
@@ -51,15 +56,32 @@ class DB {
 		return $data;
 	}
 	public static function AllInvoices() {
-		$sqlRequest = 'SELECT invoices.id, compagnies.name, invoices.dateofissue
+		$sqlRequest = 'SELECT invoices.id, invoices.dateofissue, invoices.object, compagnies.name AS "companyname", persons.name AS "contactname", companiestypes.name AS "companytype"
 						FROM invoices
-						INNER JOIN compagnies ON invoices.companyid=compagnies.id ORDER BY invoices.dateofissue DESC';
+						JOIN compagnies ON compagnies.id = invoices.companyid
+						JOIN persons ON persons.id = invoices.personid
+						JOIN companiestypes ON companiestypes.id = compagnies.typeid
+						ORDER BY dateofissue DESC';
 		$statement = self::connect()->prepare($sqlRequest);
 		$statement->execute();
 		$data = $statement->fetchAll();
 		return $data;
 	}
-	public static function queryLogin($username) {
+	public static function SelectNameIDCompagnies() {
+		$sqlRequest = 'SELECT compagnies.name, compagnies.id FROM compagnies';
+		$statement = self::connect()->prepare($sqlRequest);
+		$statement->execute();
+		$data = $statement->fetchAll();
+		return $data;
+	}
+	public static function SelectNameIDPersons() {
+		$sqlRequest = 'SELECT persons.name, persons.id FROM persons';
+		$statement = self::connect()->prepare($sqlRequest);
+		$statement->execute();
+		$data = $statement->fetchAll();
+		return $data;
+	}
+ 	public static function queryLogin($username) {
 		$sqlRequest = 'SELECT username, password FROM users WHERE username = :username';
 		$statement = self::connect()->prepare($sqlRequest);
 		$statement->BindValue(':username', $username);
