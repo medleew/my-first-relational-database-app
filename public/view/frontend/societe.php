@@ -34,5 +34,6 @@
         <?php } ?>
       </tbody>
     </table>
+    <?php include('footer.php');?>
 </body>
 </html>
