@@ -19,7 +19,8 @@
 		<select name="contactperson" id="">
 			<?php echo UpdateInvoice::showAllPersones(); ?>
 		</select>
-		<input type="submit" value="Modifier">
+		<input type="submit" value="Ajouter">
 	</form>
+	<a href="/dashboard">Retourner au dashboard</a>
 </body>
 </html>
