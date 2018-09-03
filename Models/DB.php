@@ -67,15 +67,8 @@ class DB {
 		$data = $statement->fetchAll();
 		return $data;
 	}
-	public static function SelectNameIDCompagnies() {
-		$sqlRequest = 'SELECT compagnies.name, compagnies.id FROM compagnies';
-		$statement = self::connect()->prepare($sqlRequest);
-		$statement->execute();
-		$data = $statement->fetchAll();
-		return $data;
-	}
-	public static function SelectNameIDPersons() {
-		$sqlRequest = 'SELECT persons.name, persons.id FROM persons';
+	public static function SelectNameID($table) {
+		$sqlRequest = 'SELECT name, id FROM '.$table.'';
 		$statement = self::connect()->prepare($sqlRequest);
 		$statement->execute();
 		$data = $statement->fetchAll();
@@ -88,6 +81,15 @@ class DB {
 		$statement->execute();
 		$data = $statement->fetch();
 		return $data;
+	}
+	public static function updateInvoice($id, $object, $companyid, $personid) {
+		$sqlRequest = 'UPDATE invoices SET object = :object, companyid = :companyid, personid = :personid WHERE id = :id';
+		$statement = self::connect()->prepare($sqlRequest);
+		$statement->BindValue(':id', $id);
+		$statement->BindValue(':object', $object);
+		$statement->BindValue(':companyid', $companyid);
+		$statement->BindValue(':personid', $personid);
+		$statement->execute();
 	}
 }
 

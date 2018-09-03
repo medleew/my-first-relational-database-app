@@ -20,4 +20,7 @@ Route::set('update-invoice', function() {
 Route::set('login', function() {
 	Login::VerifyLogin();
 });
+Route::set('updateinvoicepost', function() {
+	UpdateInvoicePOST::VerifyUpdateInvoice();
+});
  ?>
