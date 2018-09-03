@@ -1,0 +1,7 @@
+input.display-none{
+    display: none;
+}
+
+input.error{
+    border: 1px red solid;
+}
