@@ -38,6 +38,21 @@ class PersonsDetails extends Controller {
 			return "Null";
 		}
 	}
+	public static function showAllLinkedInvoices() {
+		$listTab = [];
+		foreach (self::queryInvoicesPersonne($_GET['id']) as $key => $value) {
+			array_push($listTab, 
+				"<tr>
+					<td>
+						<a href='/facture-details/" .$value['id']."'>" .$value['id']."</a>
+					</td>
+					<td>".$value['dateofissue']."</td>
+					<td>".$value['object']."</td>
+				</tr>"
+			);
+		}
+		return implode("", $listTab);
+	}
 }
 
  ?>

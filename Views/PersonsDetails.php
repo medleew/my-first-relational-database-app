@@ -9,7 +9,22 @@
 			<?php echo PersonsDetails::query('companyname') ?>
 		</a>
 	</p>
-	<a style="padding: 1.2vh; font-size: 1.2rem; background-color: red; position: absolute; top:0; left: 0; text-decoration: none; color: white;" href="/persons">Retourner aux personnes</a>
-	<a style="padding: 1.2vh; font-size: 1.2rem; background-color: red; position: absolute; bottom:0; left: 0; text-decoration: none; color: white;" href="/dashboard">Retourner au dashboard</a>
-</body>
 
+	<h2>Factures associées</h2>
+	<table style="margin:auto; text-align: center;">
+		<thead>
+			<th>Numéro de facture</th>
+			<th>Date</th>
+			<th>Object</th>
+		</thead>
+		<tbody>
+			<?php echo PersonsDetails::showAllLinkedInvoices(); ?>
+		</tbody>
+	</table>
+
+
+
+
+	<a style="padding: 1.2vh; font-size: 1.2rem; background-color: red; position: fixed; top:0; left: 0; text-decoration: none; color: white;" href="/persons">Retourner aux personnes</a>
+	<a style="padding: 1.2vh; font-size: 1.2rem; background-color: red; position: fixed; bottom:0; left: 0; text-decoration: none; color: white;" href="/dashboard">Retourner au dashboard</a>
+</body>

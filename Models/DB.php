@@ -30,8 +30,10 @@ class DB {
 							invoices.object, 
 							compagnies.id AS 'companyID', 
 							compagnies.name AS 'companyname', 
+							compagnies.address AS 'companyaddress',
 							companiestypes.name AS 'companytype', 
-							persons.name AS 'personname'
+							persons.name AS 'personname',
+							persons.id AS 'personsid'
 					FROM invoices
 					JOIN compagnies ON compagnies.id = invoices.companyid
 					JOIN companiestypes ON companiestypes.id = compagnies.typeid
@@ -89,6 +91,16 @@ class DB {
 		$statement->execute();	
 	}
 	/*-------------------- PERSONS---------------------------*/
+	public static function queryInvoicesPersonne($id) {
+		$sqlRequest = 'SELECT invoices.id, invoices.dateofissue, invoices.object 
+						FROM invoices
+						WHERE invoices.personid = :id';
+		$statement = self::connect()->prepare($sqlRequest);
+		$statement->BindValue(':id', $id);
+		$statement->execute();
+		$data = $statement->fetchAll();
+		return $data;
+	}
 	public static function queryPerson($id) {
 		$sqlRequest = 'SELECT persons.*, compagnies.name AS "companyname"
 						FROM persons

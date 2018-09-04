@@ -25,7 +25,7 @@
 	<a href="/facture-add">Ajouter une facture</a>
 
 	<h2>Personnes</h2>
-	<a href="/facture">Voir toutes les personnes</a>
+	<a href="/persons">Voir toutes les personnes</a>
 	<table style="text-align: center;">
 		<thead>
 			<th>ID</th>

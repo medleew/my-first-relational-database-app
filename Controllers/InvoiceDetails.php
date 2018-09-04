@@ -27,6 +27,9 @@ class InvoiceDetails extends Controller {
 				case 'personname':
 					return self::isSetReturnValue('personname');
 					break;
+				case 'companyaddress':
+					return self::isSetReturnValue('companyaddress');
+					break;
 				default:
 					return "Not found";
 					break;

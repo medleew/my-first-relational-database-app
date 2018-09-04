@@ -35,4 +35,13 @@ Route::set('invoiceaddpost', function() {
 Route::set('persons-details', function() {
 	PersonsDetails::CreateView('PersonsDetails');
 });
+Route::set('persons', function() {
+	Persons::CreateView('Persons');
+});
+Route::set('persons-update', function() {
+	PersonsUpdate::CreateView('PersonsUpdate');
+});
+Route::set('personupdatepost', function() {
+	PersonUpdatePOST::UpdatePerson();
+});
  ?>
