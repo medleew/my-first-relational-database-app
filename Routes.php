@@ -32,4 +32,7 @@ Route::set('deleteinvoice', function() {
 Route::set('invoiceaddpost', function() {
 	InvoiceAddPOST::VerifyAdd();
 });
+Route::set('persons-details', function() {
+	PersonsDetails::CreateView('PersonsDetails');
+});
  ?>

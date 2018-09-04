@@ -9,5 +9,5 @@ function __autoload($class_name) {
 		require_once './Models/'.$class_name.'.php';		
 	}
 }
-
+var_dump(PHP_VERSION)
  ?>
