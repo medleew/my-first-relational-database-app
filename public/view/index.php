@@ -1,4 +1,8 @@
-<?php include('frontend/head.php');?>
+<?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+?>
+<?php include('./frontend/head.php');?>
 <body>
 <?php include('frontend/header.php');?>
 <section>
