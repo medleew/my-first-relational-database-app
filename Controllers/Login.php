@@ -6,7 +6,9 @@ class Login extends Controller {
 			$queryLogin = Login::queryLogin($userLogin);
 			if (!empty($queryLogin)) {
 				if ($userPassword == $queryLogin['password']) {
-					echo "Good Password";
+					session_start();
+					$_SESSION['login'] = $userLogin;
+					$_SESSION['password'] = $userPassword;
 					header("Location: dashboard");
 				} else {
 					echo "Wrong password!";

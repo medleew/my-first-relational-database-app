@@ -40,6 +40,9 @@ Route::set('update-invoice', function() {
 Route::set('login', function() {
 	Login::VerifyLogin();
 });
+Route::set('logout', function() {
+	Logout::LogUserOut();
+});
 Route::set('updateinvoicepost', function() {
 	UpdateInvoicePOST::VerifyUpdateInvoice();
 });
