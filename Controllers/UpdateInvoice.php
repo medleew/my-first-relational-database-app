@@ -17,7 +17,7 @@ class UpdateInvoice extends Controller {
 	public static function showAllPersones() {
 		$tabList = [];
 		foreach (self::SelectNameID('persons') as $key => $value) {
-			if ($value['id'] == $_GET['id']) {
+			if ($value['id'] == self::queryInvoice($_GET['id'])['personsid']) {
 			array_push($tabList, "<option selected value='".$value['id']."'>".$value['name']."</option>");
 			} else {
 			array_push($tabList, "<option value='".$value['id']."'>".$value['name']."</option>");

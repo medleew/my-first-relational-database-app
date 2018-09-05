@@ -5,7 +5,7 @@
 	<title>Document</title>
 </head>
 <body>
-	<form action="/invoiceaddpost" method="POST">
+	<form action="/facture-add" method="POST">
 		<label for="dateofissue">Date d'émission :</label>
 		<input type="date" name="date">
 		<input hidden name="id" value="<?php echo $_GET['id'] ?>">

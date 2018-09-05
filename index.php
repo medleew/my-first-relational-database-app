@@ -10,5 +10,9 @@ function __autoload($class_name) {
 		require_once './Models/'.$class_name.'.php';		
 	}
 }
+<<<<<<< HEAD
 
  ?>
+=======
+ ?>
+>>>>>>> origin/sam
