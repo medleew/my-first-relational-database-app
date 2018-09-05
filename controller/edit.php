@@ -24,7 +24,7 @@
         header("Location: ../../../../public/view/frontend/societe.php");
     }
 
-    $id = $_GET['id'];
+    $id = $_GET['id_societe'];
     $sql = "SELECT * FROM societe WHERE id_societe=:id";
     $query = $db->prepare($sql);
     $query->execute(array(':id' => $id));
