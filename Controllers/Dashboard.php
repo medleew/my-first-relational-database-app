@@ -1,6 +1,9 @@
 <?php 
 
 class Dashboard extends Controller {
+	public static function greetingUser() {
+		return "Bienvenue à vous, ".$_SESSION['login']." !";
+	}
 	public static function showRecentInvoices() {
 		$listTab = [];
 		foreach (self::fiveLastedInvoices() as $key => $value) {
