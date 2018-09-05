@@ -2,6 +2,22 @@
 Route::set('index.php', function() {
 	Index::CreateView('Index');
 });
+Route::set('compagnie-add', function() {
+	if ($_POST) {CompanyAdd::VerifyAdd();}
+	CompanyAdd::CreateView('Company');
+});
+// Route::set('company', function() {
+// 	Company::CreateView('Company');
+// });
+Route::set('companyUpdate', function() {
+	UpdateCompany::CreateView('UpdateCompany');
+});
+Route::set('companyDetails', function() {
+	Dashboard::CreateView('companyDetails');
+});
+Route::set('deletecompany', function() {
+	DeleteCompany::DeleteCompanyID();
+});
 Route::set('clients', function() {
 	Clients::CreateView('Clients');
 });
