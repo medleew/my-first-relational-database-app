@@ -1,7 +1,7 @@
 <!-- CONTTROLLERS PART2 -->     
 <!-- SOCIETE.php -->
 <?php 
-    class Persons extends Controller {
+    class Compagnie extends Controller {
         public static function showAllCompanies () {
             $listTab = [];
             foreach (self::AllCompanies() as $key => $value) {

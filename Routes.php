@@ -2,6 +2,22 @@
 Route::set('index.php', function() {
 	Index::CreateView('Index');
 });
+Route::set('compagnie-add', function() {
+	if ($_POST) {CompanyAdd::VerifyAdd();}
+	CompanyAdd::CreateView('Company');
+});
+// Route::set('company', function() {
+// 	Company::CreateView('Company');
+// });
+Route::set('companyUpdate', function() {
+	UpdateCompany::CreateView('UpdateCompany');
+});
+Route::set('companyDetails', function() {
+	Dashboard::CreateView('companyDetails');
+});
+Route::set('deletecompany', function() {
+	DeleteCompany::DeleteCompanyID();
+});
 Route::set('clients', function() {
 	Clients::CreateView('Clients');
 });
@@ -12,6 +28,7 @@ Route::set('facture-details', function() {
 	InvoiceDetails::CreateView('InvoiceDetails');
 });
 Route::set('facture-add', function() {
+	if ($_POST) {InvoiceAdd::VerifyAdd();}
 	InvoiceAdd::CreateView('InvoiceAdd');
 });
 Route::set('dashboard', function() {
@@ -29,16 +46,23 @@ Route::set('updateinvoicepost', function() {
 Route::set('deleteinvoice', function() {
 	DeleteInvoice::DeleteInvoiceID();
 });
-Route::set('company', function() {
-	Company::CreateView('Company');
+Route::set('persons-details', function() {
+	PersonsDetails::CreateView('PersonsDetails');
 });
-Route::set('updateCompany', function() {
-	UpdateCompany::CreateView('UpdateCompany');
+Route::set('persons', function() {
+	Persons::CreateView('Persons');
 });
-Route::set('companyDetails', function() {
-	Dashboard::CreateView('companyDetails');
+Route::set('persons-update', function() {
+	PersonsUpdate::CreateView('PersonsUpdate');
 });
-Route::set('deletecompany', function() {
-	DeleteCompany::DeleteCompanyID();
+Route::set('personupdatepost', function() {
+	PersonUpdatePOST::UpdatePersonDB();
+});
+Route::set('persons-delete', function() {
+	PersonsDelete::DeletePersonsID();
+});
+Route::set('persons-add', function() {
+	if ($_POST) {PersonsAdd::VerifyAdd();}
+	PersonsAdd::CreateView('PersonsAdd');
 });
  ?>
