@@ -1,8 +1,8 @@
 <!-- CONTTROLLERS PART2 -->     
 <!-- SOCIETE.php -->
 <?php 
-    class Persons extends Controller {
-        public static function showAllCompanies () {
+    class Company extends Controller {
+        public static function showAllCompagnies() {
             $listTab = [];
             foreach (self::AllCompanies() as $key => $value) {
                 array_push($listTab,
