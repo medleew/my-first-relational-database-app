@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Nouvelle Facture</title>
         <meta charset="UTF-8">
@@ -15,7 +15,6 @@
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     </head>
     <body>
-        
         <nav>
             <div class="nav-wrapper">
                 <img class="logo" src="assets/images/CogipLogo.svg" alt="logo">
@@ -26,42 +25,47 @@
                 </ul>
             </div>
         </nav>
-
-        <div class="wrap">
-            
+        <div class="wrap">  
             <div class="title-back">
                 <a href="acceuil.html" class="btn waves-effect waves-light red right">Retour</a>
                 <h2 style="font-size: 30px; margin-top: 150px">Création d'une nouvelle facture</h2>
             </div>
-
             <div class="row">
                 <div class="input-field col s6">
                     <input value="" id="numero_facture" type="text" class="validate">
                     <label class="active" for="numero_facture">Numéro de la facture</label>
                 </div>
-            </div>
-            
+            </div> 
             <div class="row">
                 <div class="input-field col s6">
                     <input value="" id="date" type="date" class="validate">
                     <label class="active" for="date"></label>
                 </div>
-            </div>
-            
+            </div> 
             <div class="row">
                 <div class="input-field col s6">
                     <input value="" id="nom" type="text" class="validate">
                     <label class="active" for="nom">Nom de la société</label>
                 </div>
             </div>
-            
             <div class="row">
                 <div class="input-field col s6">
                     <input value="" id="objet" type="text" class="validate">
                     <label class="active" for="objet">Objet de la faccture</label>
                 </div>
             </div>
-            
+            <div class="row">
+                <div class="input-field col s6">
+                    <input value="" id="objet" type="text" class="validate">
+                    <label class="active" for="objet">Personne de contact</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input value="" id="objet" type="text" class="validate">
+                    <label class="active" for="objet">Société</label>
+                </div>
+            </div> 
             <button class="btn waves-effect waves-light red right" type="submit" name="action">
                 Envoyer
             </button>
