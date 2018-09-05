@@ -1,0 +1,87 @@
+/*[ Global ]*/
+
+body, html {
+  height: 100%;
+  color: #3C3D4A;
+}
+
+body {
+  background-color: #F2F2F2;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 300px;
+  margin: auto;
+  padding: 15px;
+}
+
+.gestion {
+  color: #F44336;
+}
+
+.gestion:hover {
+  color: #3C3D4A;
+}
+
+
+/*[ Nav ]*/
+
+.logo {
+  width: 150px;
+  margin: 10px;
+}
+
+.nav-wrapper {
+  color: #F2F2F2;
+  background-color: #3C3D4A;
+}
+
+
+/*[ Buttons ]*/
+
+.btn {
+  color: #F2F2F2;
+}
+
+.btn:hover {
+  background-color: #F2F2F2;
+  color: #3C3D4A;
+}
+
+
+/*[ Input ]*/
+
+
+
+
+/*[ Icons ]*/
+
+.fa {
+  padding: 5px;
+  color: #3C3D4A;
+}
+
+.fa:hover {
+  color: #F44336;
+}
+
+
+/*[ Tables ]*/
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td, th {
+  border: 1px solid #3C3D4A;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
