@@ -21,6 +21,29 @@ class DB {
 		}
 
 	}
+	// Compagnies part
+	public static function queryCompany($id) {
+		$sqlRequest = "
+					SELECT	compagnies.id, 
+							compagnies.dateofissue,
+							compagnies.object, 
+							compagnies.id AS 'companyID', 
+							compagnies.name AS 'companyname', 
+							compagniestypes.name AS 'companytype', 
+							compagnies.tva AS 'tva'
+					FROM invoices
+					JOIN compagnies ON compagnies.id = invoices.companyid
+					JOIN companiestypes ON companiestypes.id = compagnies.typeid
+					JOIN persons ON persons.id = invoices.personid
+					WHERE invoices.id = :id";
+		$statement = self::connect()->prepare($sqlRequest);
+		$statement->bindValue(':id', $id);
+		$statement->execute();
+		$data = $statement->fetch();
+		return $data;
+
+	}
+	// Invoices part
 	public static function queryInvoice($id) {
 		$sqlRequest = "
 					SELECT	invoices.id, 
