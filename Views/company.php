@@ -12,6 +12,6 @@
         <th>Type</th>
 	</thead>
 	<tbody>
-		<?php echo companyController::showAllCompagnies(); ?>
+		<?php echo Company::showAllCompagnies(); ?>
 	</tbody>
 </table>
