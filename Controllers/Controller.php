@@ -16,11 +16,9 @@ class Controller extends DB {
 					echo "Utilisateur non-existant";
 					break;
 				default:
-					# code...
 					break;
 			}
 		}
-
 		if (strtolower($viewName) == "index" && isset($_SESSION['login']) && isset($_SESSION['password'])) {
 			header('Location: /dashboard');
 		}
