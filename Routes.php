@@ -12,6 +12,7 @@ Route::set('facture-details', function() {
 	InvoiceDetails::CreateView('InvoiceDetails');
 });
 Route::set('facture-add', function() {
+	if ($_POST) {InvoiceAdd::VerifyAdd();}
 	InvoiceAdd::CreateView('InvoiceAdd');
 });
 Route::set('dashboard', function() {
@@ -29,9 +30,6 @@ Route::set('updateinvoicepost', function() {
 Route::set('deleteinvoice', function() {
 	DeleteInvoice::DeleteInvoiceID();
 });
-Route::set('invoiceaddpost', function() {
-	InvoiceAddPOST::VerifyAdd();
-});
 Route::set('persons-details', function() {
 	PersonsDetails::CreateView('PersonsDetails');
 });
@@ -42,6 +40,13 @@ Route::set('persons-update', function() {
 	PersonsUpdate::CreateView('PersonsUpdate');
 });
 Route::set('personupdatepost', function() {
-	PersonUpdatePOST::UpdatePerson();
+	PersonUpdatePOST::UpdatePersonDB();
+});
+Route::set('persons-delete', function() {
+	PersonsDelete::DeletePersonsID();
+});
+Route::set('persons-add', function() {
+	if ($_POST) {PersonsAdd::VerifyAdd();}
+	PersonsAdd::CreateView('PersonsAdd');
 });
  ?>

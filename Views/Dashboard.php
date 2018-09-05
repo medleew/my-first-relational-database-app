@@ -39,6 +39,6 @@
 			<?php echo Dashboard::showRecentPersons(); ?>
 		</tbody>
 	</table>
-	<a href="/facture-add">Ajouter une personne</a>
+	<a href="/persons-add">Ajouter une personne</a>
 </body>
 </html>

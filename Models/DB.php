@@ -91,6 +91,18 @@ class DB {
 		$statement->execute();	
 	}
 	/*-------------------- PERSONS---------------------------*/
+	public static function AddPersonsToDB($name, $firstname, $phonenumber, $email, $companyid) {
+		$sqlRequest = 'INSERT INTO persons (name, firstname, phonenumber, email, companyid) 
+						VALUES (:name, :firstname, :phonenumber, :email, :companyid)';
+		$statement = self::connect()->prepare($sqlRequest);
+		$statement->bindParam(':name', $name);
+		$statement->bindParam(':firstname', $firstname);
+		$statement->bindParam(':phonenumber', $phonenumber);
+		$statement->bindParam(':email', $email);
+		$statement->bindParam(':companyid', $companyid);
+		$statement->execute();	
+
+	}
 	public static function queryInvoicesPersonne($id) {
 		$sqlRequest = 'SELECT invoices.id, invoices.dateofissue, invoices.object 
 						FROM invoices
@@ -100,6 +112,23 @@ class DB {
 		$statement->execute();
 		$data = $statement->fetchAll();
 		return $data;
+	}
+	public static function updatePerson($id, $name, $firstname, $email, $phonenumber, $companyid) {
+		$sqlRequest = 'UPDATE persons 
+						SET name = :name, 
+							firstname = :firstname, 
+							email = :email, 
+							phonenumber = :phonenumber,
+							companyid = :companyid
+						WHERE id = :id';
+		$statement = self::connect()->prepare($sqlRequest);
+		$statement->BindValue(':id', $id);
+		$statement->BindValue(':name', $name);
+		$statement->BindValue(':firstname', $firstname);
+		$statement->BindValue(':email', $email);
+		$statement->BindValue(':phonenumber', $phonenumber);
+		$statement->BindValue(':companyid', $companyid);
+		$statement->execute();
 	}
 	public static function queryPerson($id) {
 		$sqlRequest = 'SELECT persons.*, compagnies.name AS "companyname"

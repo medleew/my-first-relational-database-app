@@ -49,9 +49,6 @@ class Dashboard extends Controller {
 						<a href='/persons-update/".$value['id']."'>
 							<i class='fas fa-pen'></i>
 						</a>
-						<a href='/persons-delete/".$value['id']."'>
-							<i class='fas fa-trash'></i>
-						</a>
 					</td>
 				</tr>"
 			);
