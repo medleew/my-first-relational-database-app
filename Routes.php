@@ -29,7 +29,16 @@ Route::set('updateinvoicepost', function() {
 Route::set('deleteinvoice', function() {
 	DeleteInvoice::DeleteInvoiceID();
 });
-Route::set('invoiceaddpost', function() {
-	InvoiceAddPOST::VerifyAdd();
+Route::set('company', function() {
+	Company::CreateView('Company');
+});
+Route::set('updateCompany', function() {
+	UpdateCompany::CreateView('UpdateCompany');
+});
+Route::set('companyDetails', function() {
+	Dashboard::CreateView('companyDetails');
+});
+Route::set('deletecompany', function() {
+	DeleteCompany::DeleteCompanyID();
 });
  ?>
