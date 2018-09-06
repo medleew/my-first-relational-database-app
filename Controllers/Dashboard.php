@@ -14,20 +14,20 @@ class Dashboard extends Controller {
 					</td>
 					<td>".$value['dateofissue']."</td>
 					<td>".$value['object']."</td>
-					<td>".$value['companyname']."</td>
 					<td>".$value['contactname']."</td>
-					<td>".$value['companytype']."</td>
+					<td>".$value['companyname']."</td>
 					<td>
-						<a href='facture-details/".$value['id']."'>
-							<i class='far fa-eye'></i>
+						<a href='facture-details/".$value['id']."' alt='details'>
+							<i class='fa fa-eye'></i>
 						</a>
-						<a href='/Update-Invoice/".$value['id']."'>
-							<i class='fas fa-pen'></i>
+						<a href='/Update-Invoice/".$value['id']."' alt='modifications'>
+							<i class='fa fa-pencil'></i>
 						</a>
-						<a href='/deleteinvoice/".$value['id']."'>
-							<i class='fas fa-trash'></i>
+						<a href='/deleteinvoice/".$value['id']."' alt='suppression'>
+							<i class='fa fa-minus-circle'></i>
 						</a>
 					</td>
+
 				</tr>"
 			);
 		}
@@ -47,10 +47,10 @@ class Dashboard extends Controller {
 					<td>".$value['companyname']."</td>
 					<td>
 						<a href='persons-details/".$value['id']."'>
-							<i class='far fa-eye'></i>
+							<i class='fa fa-eye'></i>
 						</a>
 						<a href='/persons-update/".$value['id']."'>
-							<i class='fas fa-pen'></i>
+							<i class='fa fa-pencil'></i>
 						</a>
 					</td>
 				</tr>"
