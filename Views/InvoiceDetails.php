@@ -4,12 +4,12 @@
         <title>Detail Facture</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="assets/images/CogipLogo.svg"/>
-        <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/fonts/iconic/css/material-design-iconic-font.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/util.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <link rel="icon" type="image/png" href="../assets/images/CogipLogo.svg"/>
+        <link rel="stylesheet" type="text/css" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../assets/fonts/iconic/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" type="text/css" href="../assets/css/util.css">
+        <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
@@ -17,7 +17,7 @@
     <body>
         <nav>
             <div class="nav-wrapper">
-                <img class="logo" src="assets/images/CogipLogo.svg" alt="logo">
+                <img class="logo" src="../assets/images/CogipLogo.svg" alt="logo">
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="acceuil.html">Acceuil</a></li>
                     <li><a href="personnes.html">Personnes</a></li>
