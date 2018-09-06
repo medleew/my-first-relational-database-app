@@ -1,10 +1,10 @@
 <?php 
 
 class DB {
-	public static $host = "localhost";
-	public static $dbname = "cogipapp";
-	public static $username = "root";
-	public static $password = "";
+	public static $host = "sql7.freemysqlhosting.net";
+	public static $dbname = "sql7255431";
+	public static $username = "sql7255431";
+	public static $password = "rCTt4mk35H";
 	private static function connect() {
 		$bdd = new PDO("mysql:host=".self::$host.";dbname=".self::$dbname.";charset=utf8", self::$username, self::$password);
 		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
