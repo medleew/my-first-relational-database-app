@@ -15,16 +15,7 @@
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     </head>
     <body>
-        <nav>
-            <div class="nav-wrapper">
-                <img class="logo" src="../assets/images/CogipLogo.svg" alt="logo">
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="acceuil.html">Acceuil</a></li>
-                    <li><a href="personnes.html">Personnes</a></li>
-                    <li><a href="societes.html">Sociétés</a></li>
-                </ul>
-            </div>
-        </nav>
+        <?php require_once("./Views/components/navbar.php"); ?>
         <div class="wrap">      
             <h1>Factures</h1>
             <table>
