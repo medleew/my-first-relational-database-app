@@ -1,7 +1,7 @@
 <?php 
 class Login extends Controller {
 		public static function VerifyLogin(){
-			if ($POST) {
+			if ($_POST) {
 				$userLogin = $_POST['userLogin'];
 				$userPassword = sha1($_POST['userPassword']);
 				$queryLogin = Login::queryLogin($userLogin);
