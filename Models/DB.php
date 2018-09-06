@@ -60,7 +60,7 @@ class DB {
 		return $data;
 	}
 	public static function AllInvoices() {
-		$sqlRequest = 'SELECT invoices.id, invoices.dateofissue, invoices.object, compagnies.name AS "companyname", persons.name AS "contactname", companiestypes.name AS "companytype"
+		$sqlRequest = 'SELECT invoices.id, invoices.dateofissue, invoices.object, compagnies.name AS "companyname", persons.name AS "contactname", companiestypes.name AS "companytype", compagnies.id AS "companyid"
 						FROM invoices
 						JOIN compagnies ON compagnies.id = invoices.companyid
 						JOIN persons ON persons.id = invoices.personid

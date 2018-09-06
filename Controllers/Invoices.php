@@ -11,9 +11,20 @@ class Invoices extends Controller {
 					</td>
 					<td>".$value['dateofissue']."</td>
 					<td>".$value['object']."</td>
-					<td>".$value['companyname']."</td>
 					<td>".$value['contactname']."</td>
-					<td>".$value['companytype']."</td>
+					<td>
+						<a href='company-details/" .$value['companyid']."'>
+							".$value['companyname']."
+						</a>
+					</td>
+					<td>
+						<a href='facture-details/".$value['id']."' alt='details'>
+							<i class='fa fa-eye'></i>
+						</a>
+						<a href='/Update-Invoice/".$value['id']."' alt='modifications'>
+							<i class='fa fa-pencil'></i>
+						</a>
+					</td>
 				</tr>"
 			);
 		}

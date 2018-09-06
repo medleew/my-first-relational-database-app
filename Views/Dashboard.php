@@ -16,19 +16,10 @@
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     </head>
     <body>
-        <nav>
-            <div class="nav-wrapper">
-            	<a href="/dashboard">
-               		<img class="logo" src="assets/images/CogipLogo.svg" alt="logo">
-               	</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="personnes.html">Personnes</a></li>
-                    <li><a href="factures.html">Factures</a></li>
-                    <li><a href="societes.html">Sociétés</a></li>
-                </ul>
-            </div>
-        </nav>
+        <?php require_once("./Views/components/navbar.php"); ?>
         <div class="wrap">
+            <h1>Bienvenue <?php echo $_SESSION['login'] ?> !</h1>
+            <a href='/logout'>Cliquez ici pour vous déconnectez !</a>
             <h3>Dernières factures</h3>
             <div>
                 <a href="/facture-add" class="btn red">Ajouter une nouvelle facture</a>

@@ -29,7 +29,6 @@ class Controller extends DB {
 		else {
 			if (isset($_SESSION['login']) && isset($_SESSION['password'])) {
 				require_once("./Views/$viewName.php");
-				echo "<a href='/logout'>Logout</a>";
 			} else {
 				header('Location: /?status=notloggedin');
 			}

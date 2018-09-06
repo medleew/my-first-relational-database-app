@@ -15,53 +15,46 @@
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     </head>
     <body>
-        <nav>
-            <div class="nav-wrapper">
-                <img class="logo" src="../assets/images/CogipLogo.svg" alt="logo">
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="personnes.html">Personnes</a></li>
-                    <li><a href="factures.html">Factures</a></li>
-                    <li><a href="societes.html">Sociétés</a></li>
-                </ul>
-            </div>
-        </nav>
+        <?php require_once("./Views/components/navbar.php"); ?>
         <div class="wrap">  
-            <div class="title-back">
-                <a href="acceuil.html" class="btn waves-effect waves-light red right">Retour</a>
-                <h2 style="font-size: 30px; margin-top: 150px">Modification de la facture</h2>
-                <p>Numéro de facture : #<?php echo $_GET['id'] ?></p>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input value="<?php echo UpdateInvoice::showInvoiceInfo('dateofissue') ?>" name="date" id="date" type="date" class="validate">
-                    <label class="active" for="date"></label>
+            <form action="" method="POST">
+                <div class="title-back">
+                    <a href="javascript:history.go(-1)" class="btn waves-effect waves-light red right">Retour</a>
+                    <h2 style="font-size: 30px; margin-top: 150px">Modification de la facture</h2>
+                    <p>Numéro de facture : #<?php echo $_GET['id'] ?></p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="objet" type="text" class="validate" value="<?php echo UpdateInvoice::showInvoiceInfo('object') ?>">
-                    <label class="active" for="objet">Objet de la facture</label>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input value="<?php echo UpdateInvoice::showInvoiceInfo('dateofissue') ?>" name="date" id="date" type="date" class="validate">
+                        <label class="active" for="date"></label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <label class="active" for="contactperson">Personne de contact</label>
-					<select name="contactperson" class="form-control mt-2" id="contactperson">
-						<?php echo UpdateInvoice::showAllPersones(); ?>
-					</select>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="objet" type="text" class="validate" value="<?php echo UpdateInvoice::showInvoiceInfo('object') ?>">
+                        <label class="active" for="objet">Objet de la facture</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <label class="active" for="company">Société</label>
-                    <select name="company" class="form-control mt-2" id="company">
-                    	<?php echo UpdateInvoice::showAllCompagnies(); ?>
-                    </select>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label class="active" for="contactperson">Personne de contact</label>
+    					<select name="contactperson" class="form-control mt-2" id="contactperson">
+    						<?php echo UpdateInvoice::showAllPersones(); ?>
+    					</select>
+                    </div>
                 </div>
-            </div>
-            <button class="btn waves-effect waves-light red right" type="submit" name="action">
-                Confirmer
-            </button>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label class="active" for="company">Société</label>
+                        <select name="company" class="form-control mt-2" id="company">
+                        	<?php echo UpdateInvoice::showAllCompagnies(); ?>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light red right" type="submit" name="action">
+                    Confirmer
+                </button>
+            </form>
         </div>
     </body>
 </html>
