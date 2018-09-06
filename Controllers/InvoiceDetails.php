@@ -24,6 +24,9 @@ class InvoiceDetails extends Controller {
 				case 'companytype':
 					return self::isSetReturnValue('companytype');
 					break;
+				case 'companyid':
+					return self::isSetReturnValue('companyid');
+					break;
 				case 'personname':
 					return self::isSetReturnValue('personname');
 					break;

@@ -28,7 +28,7 @@ class DB {
 					SELECT	invoices.id, 
 							invoices.dateofissue,
 							invoices.object, 
-							compagnies.id AS 'companyID', 
+							compagnies.id AS 'companyid', 
 							compagnies.name AS 'companyname', 
 							compagnies.address AS 'companyaddress',
 							companiestypes.name AS 'companytype', 
