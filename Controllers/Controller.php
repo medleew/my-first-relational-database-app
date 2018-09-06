@@ -20,7 +20,6 @@ class Controller extends DB {
 					break;
 			}
 		}
-
 		if (strtolower($viewName) == "index" && isset($_SESSION['login']) && isset($_SESSION['password'])) {
 			header('Location: /dashboard');
 		}
